@@ -27,9 +27,9 @@ def openai_model(prompt):
 
 def chat_output(chat, text):
     text = text or []
-    ls = [sum(text, ())]
+    ls = list(sum(text, ()))
     ls.append(chat)
-    ch = ' '.join(s)
+    ch = ' '.join(ls)
     output = openai_model(ch)
     text.append((chat, output))
     return text, text
